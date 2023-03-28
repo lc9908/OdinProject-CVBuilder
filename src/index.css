@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@900&display=swap');
+/* font-family: 'Merienda', cursive; */
+
+:root{
+    --title-font: 'Merienda', cursive;
+    /* border: 1px solid black; */
+}
+
+
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+
+.app{
+    height:100vh;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.app .changeModeBtn{
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    background-color: rgb(99, 99, 99);
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.app .changeModeBtn:active{
+
+    box-shadow: 0 0 5px 2px black;
+
+}
+
+.app > .title{
+    font-family: var(--title-font);
+    text-align: center;
+    margin: 15px 0 15px 0;
+    width:50%;
+    font-size: 3rem;
+}
+
+/* resume styling */
+
+.app .resume{
+    width: 50%;
+    border: 1px solid black;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.app .resume .header,
+.app .resume .education,
+.app .resume .work{
+    padding: 20px;
+}
+
+.app .resume .title{
+    font-size: 1.5rem;
+    font-family: var(--title-font);
+}
+
+/* header styling */
+
+.header input{
+    background-color: inherit;
+    border: none;
+    font-family: var(--title-font);
+    text-transform: uppercase;
+    height:max-content;
+}
+
+input.name{
+    font-size: 3rem;
+    width: 100%;
+}
+
+.addedName{
+    font-size: 3rem;
+}
+
+input.address::placeholder,input.phone::placeholder{
+    color:rgb(216, 216, 216);
+}
+
+
+input.address,
+input.phone,
+.addedAddress,
+.addedPhone{
+    width:100%;
+    color:rgb(161, 161, 161);
+    font-size: 1.2rem;
+}
+
+.addedName,
+.addedAddress,
+.addedPhone{
+    font-family: var(--title-font);
+    text-transform: uppercase;
+}
+
+/* education styling */
+
+.education .title{
+    margin-bottom: 5px;
+}
+
+.education .educationForm,
+.work .workForm{
+    --gap: 5px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid rgb(90, 90, 90);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    border-radius: 5px;
+    background-color: rgba(230, 230, 230, 0.5);
+    
+}
+
+.education .educationForm div,
+.work .workForm div{
+    width:calc(50% - var(--gap));
+
+}
+
+/* education form styling */
+.education .educationForm #universitySection{
+    width:calc(100% - var(--gap));
+}
+
+
+
+.education .educationForm label,
+.work .workForm label{
+    font-size: 1.2rem;
+    float:left;
+}
+
+.education .educationForm input,
+.work .workForm input{
+    font-size: 1.2rem;
+    width:100%;
+    padding: 10px;
+}
+
+/* education button styling */
+
+.education .educationForm .submit,
+.work .workForm .submit{
+    background-color: black;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    color:white;
+}
+.education .educationForm .close,
+.education .addEducation,
+.work .addWork,
+.work .workForm .close{
+    background-color: red;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.education .addEducation:active{
+    box-shadow: 0 0 5px 2px red;
+}
+
+/* addedEducation and addedExperience styling */
+
+.addedEducation, .addedExperience{
+    /* border: 1px solid black; */
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.addedExperience{
+    align-items: center;
+}
+
+/* work label 100% */
+.work .workForm #companySection,
+.work .workForm #workTitleSection{
+    width:calc(100% - var(--gap));
+}
+
+.work textarea{
+    width:100%;
+    resize: none;
+}
+
+button.delete{
+    background-color: rgb(199, 199, 199);
+    padding:0 10px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgb(225, 235, 235);
+    border-radius: 5px;
+    height: 50px;
+}
+
