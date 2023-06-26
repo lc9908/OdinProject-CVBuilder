@@ -13,6 +13,7 @@ class Experience extends Component {
         from: '',
         to: '',
         summarize: '',
+        index: 0,
       },
       exps: [],
     }
@@ -32,6 +33,7 @@ class Experience extends Component {
         from: this.state.exp.from,
         to: this.state.exp.to,
         summarize: this.state.exp.summarize,
+        index: this.state.exp.index,
       }
     });
   }
@@ -44,6 +46,7 @@ class Experience extends Component {
         from: this.state.exp.from,
         to: this.state.exp.to,
         summarize: this.state.exp.summarize,
+        index: this.state.exp.index,
       }
     });
   }
@@ -56,6 +59,7 @@ class Experience extends Component {
         from: e.target.value,
         to: this.state.exp.to,
         summarize: this.state.exp.summarize,
+        index: this.state.exp.index,
       }
     });
   }
@@ -68,6 +72,7 @@ class Experience extends Component {
         from: this.state.exp.from,
         to: e.target.value,
         summarize: this.state.exp.summarize,
+        index: this.state.exp.index,
       }
     });
   }
@@ -80,6 +85,7 @@ class Experience extends Component {
         from: this.state.exp.from,
         to: this.state.exp.to,
         summarize: e.target.value,
+        index: this.state.exp.index,
       }
     });
   }
@@ -94,11 +100,23 @@ class Experience extends Component {
         from: '',
         to: '',
         summarize: '',
+        index: this.state.exp.index + 1,
       },
       exps: this.state.exps.concat(this.state.exp),
     });
-    console.log(this.state.exps);
   }
+
+  deleteExp = (e) => {
+    e.preventDefault();
+    console.log(e);
+    let deleteIndex = Number(e.target.dataset.index);
+    console.log(deleteIndex);
+
+    this.setState({
+      exps: this.state.exps.filter((exp) => exp.index !== deleteIndex),
+    });
+  }
+
 
 
   render() { 
@@ -108,7 +126,7 @@ class Experience extends Component {
     return (    
       <div className="work">
         <h1 className="title">WORK EXPERIENCE</h1>
-        <Experiences experiences={exps} editMode={editMode} />
+        <Experiences experiences={exps} deleteExp={this.deleteExp} editMode={editMode} />
         {open &&
         <form className="workForm" onSubmit={this.addExperience}>
                 <div id="companySection">

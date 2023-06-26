@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Experiences(props) {
 
-  const {experiences, editMode} = props;
+  const {experiences, deleteExp, editMode} = props;
   return (
     <div>
       {experiences.map((experience) => {
@@ -17,7 +17,8 @@ export default function Experiences(props) {
               <li>{experience.summarize}</li>
             </ul>
           </div>
-          {editMode && <button className="delete"> DELETE </button>  }      
+          {editMode && <button data-index={experience.index} onClick={deleteExp} className="delete"> DELETE </button>  }      
+    
         </div>
       )
     })}
